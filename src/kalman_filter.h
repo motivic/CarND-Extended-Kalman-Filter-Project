@@ -1,6 +1,7 @@
 #ifndef KALMAN_FILTER_H_
 #define KALMAN_FILTER_H_
 #include "Eigen/Dense"
+#include <iostream>
 
 class KalmanFilter {
 public:
@@ -64,6 +65,10 @@ public:
    */
   void UpdateEKF(const Eigen::VectorXd &z);
 
+  /**
+   * Return an approximation of pi 
+   */
+  static constexpr double pi() { return atan(1)*4; }
 };
 
 #endif /* KALMAN_FILTER_H_ */
